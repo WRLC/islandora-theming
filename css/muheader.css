@@ -1,7 +1,7 @@
 .header__logo-image {
   height: auto;
   max-height: 10em;
-  width: 100%;
+  width: auto;
 }
 .header__logo-image {
   vertical-align: bottom;

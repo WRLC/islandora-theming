@@ -25,6 +25,46 @@
  *       @see http://snook.ca/archives/html_and_css/no_css_reset/
  */
 
+/*Grid - Displays grid using dl formatted inline */
+.islandora-objects-grid dl {
+  width: 20%;
+  min-width: 100px;
+  min-height: 180px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  background-color: #dedede;
+  border-top:8px solid #004fa4;
+  vertical-align: top;
+  margin: 1.0em 1.84%;
+  zoom: 1;
+  *display: inline;
+  _height: 180px;
+}
+
+.islandora-objects-grid-item {
+  display: inline;
+  text-align: center;
+}
+
+.islandora-objects-grid dd {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.islandora-object-thumb img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top:12px;
+  margin-bottom:3px;
+  padding-bottom:3px;
+  max-width:100%;
+}
+
+.islandora-objects-display-switch {
+  float: right;
+}
+
 #block-wrlcdora-collapsible-search-block {
   height: 100%;
   padding-bottom: 1em;
@@ -83,6 +123,7 @@ video {
 
 .content-page-bottom{
   width:100% !important;
+  background-color: white;
 }
 #mediaplayer {
   max-width: 100%;
@@ -470,7 +511,7 @@ img {
   /* Suppress the space beneath the baseline */
   /* vertical-align: bottom; */
   /* Responsive images */
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
   /* Correct IE 8 not scaling image height when resized. */
   width: auto;
@@ -703,12 +744,16 @@ table {
  * by setting a max-width.
  */
 /* line 34, ../sass/layouts/_responsive.scss */
+
+#page {
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
 #page,
 .region-bottom {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 /* Apply the shared properties of grid items in a single, efficient ruleset. */
@@ -1080,7 +1125,7 @@ table {
 /* The link around the name of the website. */
 /* line 111, ../sass/components/_misc.scss */
 .header__site-link:link, .header__site-link:visited {
-  color: #003359;
+  color: #076193;
   text-decoration: none;
 }
 /* line 117, ../sass/components/_misc.scss */
@@ -1097,8 +1142,7 @@ table {
 /* The secondary menu (login, etc.) */
 /* line 128, ../sass/components/_misc.scss */
 .header__secondary-menu {
-  position: absolute;
-  right: 2em;
+  float: center;
 }
 
 /* Wrapper for any blocks placed in the header region. */
@@ -1157,7 +1201,7 @@ table {
 #navigation .links li a:hover, #navigation .links li a.active,
 #navigation .menu li a:hover,
 #navigation .menu li a.active {
-  color: #009FDA;
+  color: #004fa4;
 }
 /* line 186, ../sass/components/_misc.scss */
 #navigation .links li:hover, #navigation .links li.active,
@@ -1238,11 +1282,11 @@ table {
   */
 /* line 219, ../sass/components/_misc.scss */
 #footer {
-  border-top: 8px solid #000;
+  border-top: 3px solid #c4122f;
 }
 /* line 222, ../sass/components/_misc.scss */
 #footer .footer-navigation.bottom {
-  background: #000;
+  background: #004fa4;
 }
 /* line 224, ../sass/components/_misc.scss */
 #footer .footer-navigation.bottom a:link, #footer .footer-navigation.bottom a:visited {
@@ -1250,7 +1294,7 @@ table {
 }
 /* line 227, ../sass/components/_misc.scss */
 #footer .footer-navigation.bottom a:hover {
-  color: #009fda;
+  color: #c4122f;
 }
 /* line 231, ../sass/components/_misc.scss */
 #footer .footer-navigation.top {
@@ -1618,7 +1662,7 @@ span.field-label {
 /* Block wrapper. */
 /* line 573, ../sass/components/_misc.scss */
 .block {
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 /**
@@ -2055,8 +2099,9 @@ tr.selected td {
 }
 /* line 7, ../sass/components/_islandora.scss */
 #block-islandora-solr-simple {
-  margin: 5em auto;
+  margin: -.5em auto 1em;
   width: 60%;
+  padding-top: 5px;
 }
 /* line 10, ../sass/components/_islandora.scss */
 #block-islandora-solr-simple input.form-text {
@@ -2103,11 +2148,27 @@ tr.selected td {
   width: 30%;
 }
 
+.main-slideshow {
+  margin: 0.5em 1em 0em 7.5em;
+  text-align: center;
+  min-height: 400px;
+}  
+
+.main-slideshow div {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-slideshow img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* line 47, ../sass/components/_islandora.scss */
 .featured-additions {
-  width: 70%;
-  float: left;
+  text-align: center;
 }
+
 /* line 50, ../sass/components/_islandora.scss */
 .featured-additions h3 {
   font-weight: normal;
@@ -2119,6 +2180,7 @@ tr.selected td {
 .featured-additions .view-wrlc-frontpage-solr-boxes .view-content:before, .featured-additions .view-wrlc-frontpage-solr-boxes .view-content:after {
   content: "";
   display: table;
+  
 }
 /* line 50, ../sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
 .featured-additions .view-wrlc-frontpage-solr-boxes .view-content:after {
@@ -2147,11 +2209,11 @@ tr.selected td {
   overflow: hidden;
   max-height: 13em;*/
 }
-
+/*
 .recent-additions {
   padding-top: 1em;
 }
-
+*/
 /* line 70, ../sass/components/_islandora.scss */
 .featured-additions .views-row .views-column .views-field-php img {
   height: 300px;
@@ -2195,13 +2257,14 @@ tr.selected td {
 }
 
 #block-islandora-basic-collection-collection-object-count {
-  width: 30%;
-  float: left;
+  
   padding-left: 1em;
+  text-align: center;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
+  color: #004fa4;
 }
 /* line 90, ../sass/components/_islandora.scss */
 .browse-collections {
@@ -2244,7 +2307,7 @@ tr.selected td {
 .recent-additions {
   width: 100%;
   float: left;
-  border-bottom: 8px solid #000;
+  border-bottom: 3px solid #c4122f;
 }
 /* line 113, ../sass/components/_islandora.scss */
 .recent-additions h2 {
@@ -2321,7 +2384,7 @@ tr.selected td {
 /* line 159, ../sass/components/_islandora.scss */
 #block-islandora-solr-explore {
   float: left;
-  width: 70%;
+  width: 100%;
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -2332,7 +2395,7 @@ tr.selected td {
   font-size: 105%;
   font-weight: normal;
   letter-spacing: 0.75pt;
-  background: #323232;
+  background: #004fa4;
   color: white;
   padding: 0 10px;
   margin-bottom: 0.5em;
@@ -2364,6 +2427,7 @@ tr.selected td {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
+  padding: 0.5em;
 }
 /* line 187, ../sass/components/_islandora.scss */
 .ext-links h2 {
@@ -2489,6 +2553,16 @@ tr.selected td {
   opacity: 0.5;
 }
 
+/* ip embargo text configuration */
+.islandora_ip_embargo_embargoed span {
+  color: rgb(196, 18, 47);
+  left: 0px;
+  padding: 0.5em;
+  font-size: .8em;
+  position: inherit;
+  text-decoration: none;
+}
+
 /* line 297, ../sass/components/_islandora.scss */
 .islandora-basic-collection-display-switch ul li {
   padding: 0;
@@ -2537,9 +2611,9 @@ tr.selected td {
 
 /* line 5, ../sass/components/_pages.scss */
 #header {
-  border-top: 3px solid #000;
+  border-top: 3px solid #004fa4;
   margin-top: 2em;
-  padding: 1em 0;
+  padding: 0.5em 0;
 }
 
 /* line 11, ../sass/components/_pages.scss */
